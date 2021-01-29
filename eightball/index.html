@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Magic Eight Ball</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="eightball.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1></h1>
+            </div>
+
+            <div id="content"> 
+                <h2>Ask a question, get an answer!</h2>
+                <form action = "http://127.0.0.1:8081/process_get" method = "get">
+                <label>      
+                    Question: <input type="text" name="question">
+                </label>
+                <input type="submit" value="Submit"/>
+                </form>
+            </div>
+            <div id="footer">Created by: Victoria Ludwig</div>
+        </div>
+    </body>
+</html>
+
