@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Magic Eight Ball</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="eightball.css">
-    </head>
-    <body>
-        <div id="wrapper">
-            <div id="header">
-                <h1></h1>
-            </div>
-
-            <div id="content"> 
-                <h2>Ask a question, get an answer!</h2>
-                <form action = "http://127.0.0.1:8081/process_get" method = "get">
-                <label>      
-                    Question: <input type="text" name="question">
-                </label>
-                <input type="submit" value="Submit"/>
-                </form>
-            </div>
-            <div id="footer">Created by: Victoria Ludwig</div>
-        </div>
-    </body>
+<html>
+ <head>
+  <title>Magic Eight Ball</title>
+  <script src="eightball.js"></script>
+  <link rel="stylesheet" href="eightball.css">
+ </head>
+ <body>
+  <div id="content">
+    <h1>Magic Eight Ball</h1>
+    <p id="info">Ask a question, get an answer!</p>
+    <input type="text" id="question" />
+    <div id="eight-ball" class="eight-ball">
+      <div class="answer">
+        <p id="eight">8</p>
+        <p id="answer"></p>
+      </div>
+    </div>
+  </div>
+ </body>
 </html>
 
+<!-- code from https://medium.com/swlh/creating-a-magic-8-ball-in-html5-with-javascript-40df2a0c6efb -->

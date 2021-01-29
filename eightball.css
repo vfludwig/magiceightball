@@ -1,49 +1,57 @@
-body { font-family:Verdana, Arial, sans-serif;
-    background-color: #310085;
-}
-#wrapper { background-color: #310085;
-    color: #ffffff; 
-    font-size: 150%; 
-    background: url(eight-ball.png); 
-    padding:100px;
-    background-size: 100px 100px;
-    background-repeat: repeat;
-} 
-#content { background-color: #ffffff;
-        color: #000000;
-        padding: 10px 20px;
-        overflow: auto; 
-} 
-#footer {font-size:70%;
-      text-align: center;
-      padding: 10px;
-      background-color: #100f11;
-}
-h2 { color: #5f35a8; 
-  font-family: arial, sans-serif;
-}
-#floatright { margin: 10px;
-          float: right;
+h1 { font-weight: 100; font-size: 2.5em;}
+    
+#content { 
+ width: 600px; 
+ margin: 0 auto; 
+ margin-top: 50px; 
+ border: 1px dotted black;       
+ text-align: center; 
+ font-family: 'Helvetica Neue', arial; 
+ font-weight: 100;
 }
 
-@media only screen and (max-width: 1024px) {
-body { margin:0;}
-#wrapper { width:auto;}
-main {margin-left: 0;}
-nav {float: none; width: auto;}
-nav li {display: inline-block; padding: 0.5em; }
-nav ul {text-align: center;}
-nav a {border-style: none;}
-h1, h2 {font-size: 120%;}
-p {font-size: 90%;}
+div.eight-ball {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
-@media only screen and (max-width: 768px) {
-h1, h2 {font-size: 100%;}
-p {font-size:90%;}
-figure {display: none;}
-nav, nav ul, nav li {padding:0;}
-nav li {display: block;}
-nav a {display: block; padding: 0.5em 0;
-border-bottom: 2px ridge #fdb813; }
+div.answer {
+  background-color: #333;
+  border: 1px solid #333;
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  margin: 25% auto;
 }
+
+p#eight {
+  font-size: 5em;
+  margin: 20% auto;
+  color: white;
+}
+
+p#answer {
+  padding: 23px;
+  color: lightblue;
+  letter-spacing: 2px;
+  font-size:18px;
+}
+
+#question {
+  margin: 20px;
+  padding: 10px;
+  width: 400px;
+  font-size:22px;
+}
+
+#info {
+  font-size: 22px;
+}
+
+/* code from https://medium.com/swlh/creating-a-magic-8-ball-in-html5-with-javascript-40df2a0c6efb */
