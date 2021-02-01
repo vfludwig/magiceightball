@@ -39,7 +39,6 @@ window.onload = function() {
 
 
 function saveData() {
-    var input = document.getElementById("question").value;
-    alert(input);
+    alert(answer,question);
 }
 
