@@ -39,6 +39,6 @@ window.onload = function() {
 
 
 function saveData() {
-    alert(answer,question);
+    alert('question: ' + question + ', answer: ' + answer);
 }
 
