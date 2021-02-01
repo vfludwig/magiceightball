@@ -31,7 +31,10 @@ window.onload = function() {
         eight.innerText = "";
         var num = Math.floor(Math.random() * Math.floor(answers.length));
         answer.innerText = answers[num];
-        alert('question: ' + question.value + ', answer: ' + answer.innerText);
+
+        var my_time = new Date();
+        document.getElementById('display').innerHTML=my_time
+        alert('question: ' + question.value + ', answer: ' + answer.innerText+ ', time: ' + my_time);
         }
     });
 };
