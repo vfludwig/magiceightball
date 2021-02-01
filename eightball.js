@@ -35,9 +35,9 @@ window.onload = function() {
         localStorage.setItem("question", question.value);
         localStorage.setItem("time", Date.now());
 
-        console.log("answer");
-        console.log("question");
-        console.log("time");
+        console.log(answer);
+        console.log(question);
+        console.log(time);
         }
     });
 };
