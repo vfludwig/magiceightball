@@ -31,14 +31,9 @@ window.onload = function() {
         eight.innerText = "";
         var num = Math.floor(Math.random() * Math.floor(answers.length));
         answer.innerText = answers[num];
+        alert('question: ' + question.value + ', answer: ' + answer.innerText);
         }
     });
 };
 
 /* above code from https://medium.com/swlh/creating-a-magic-8-ball-in-html5-with-javascript-40df2a0c6efb */
-
-
-function saveData() {
-    alert('question: ' + question.value + ', answer: ' + answer.innerText);
-}
-
