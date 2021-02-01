@@ -33,7 +33,6 @@ window.onload = function() {
         answer.innerText = answers[num];
 
         var my_time = new Date();
-        document.getElementById('display').innerHTML=my_time
         alert('question: ' + question.value + ', answer: ' + answer.innerText+ ', time: ' + my_time);
         }
     });
