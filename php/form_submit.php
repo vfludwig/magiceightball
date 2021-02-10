@@ -1,9 +1,9 @@
 <?php
 session_start();
-$host = "34.123.183.180";
-$db_name = "Magic_Eightball";
+$host = "localhost";
+$db_name = "eightball";
 $username = "root";
-$password = "eightball";
+$password = "";
 $connection = null;
 try{
 $connection = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);
@@ -14,12 +14,16 @@ echo "Connection error: " . $exception->getMessage();
 
 
 
-use \Datetime;
+use Datetime;
 
 $now = new DateTime();
 $now->format('Y-m-d H:i:s');    
 
-function saveData($question, $_SESSION["result"], $now, $_SERVER['REMOTE_ADDR']){
+$answer = $_SESSION["result"];
+
+$ipaddress = $_SERVER['REMOTE_ADDR'];
+
+function saveData($question, $answer, $now, $ipaddress){
 global $connection;
 $query = "INSERT INTO info(question, answer, timedaterecorded, ipaddress) VALUES( :question, :answer, :timedaterecorded, :ipaddress)";
 

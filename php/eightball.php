@@ -41,9 +41,49 @@
 
                                         $result = $answers[ $eightball->answer ];
 
-                                        $_SESSION["result"] = $result;
-                                        
+
                                         echo '<span class="answer">' . $result . '</span>' . PHP_EOL;
+
+                                        
+$host = "34.86.111.213";
+$db_name = "Magic_Eightball";
+$username = "root";
+$password = "eightball";
+$connection = null;
+try{
+$connection = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);
+$connection->exec("set names utf8");
+}catch(PDOException $exception){
+echo "Connection error: " . $exception->getMessage();
+}
+
+
+$question = $_GET["Question"];
+
+$now = date('Y-m-d H:i:s');
+
+$answer = $result;
+
+$ipaddress = $_SERVER['REMOTE_ADDR'];
+
+function saveData($question, $answer, $now, $ipaddress){
+global $connection;
+$query = "INSERT INTO info(questions, answers, datetimerecorded, ipaddress) VALUES('$question', '$answer', '$now', '$ipaddress')";
+
+$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try{
+$connection->exec($query);
+  echo "New record created successfully";
+} catch(PDOException $e) {
+  echo $query . "<br>" . $e->getMessage();
+}
+
+
+}
+//then you can use them in a PHP function. 
+$results = saveData($question, $answer, $now,$ipaddress);
+echo $results;
+
 
 
 
@@ -56,3 +96,4 @@
                                     ?>
                                 </div>
 </div>
+
