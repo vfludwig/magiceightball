@@ -1,4 +1,5 @@
 <?php
+    session_start();
     function ClassAutoloader($class) {
         include 'php/classes/' . $class . '.class.php';
     }
@@ -37,7 +38,16 @@
                                          *   Display the answer.
                                         */
                                         $eightball = new eightball(count($answers)-1);
-                                        echo '<span class="answer">' . $answers[ $eightball->answer ] . '</span>' . PHP_EOL;
+
+                                        $result = $answers[ $eightball->answer ];
+
+                                        $_SESSION["result"] = $result;
+                                        
+                                        echo '<span class="answer">' . $result . '</span>' . PHP_EOL;
+
+
+
+
                                     }
                                     else{
                                         // Initial value of of the ball

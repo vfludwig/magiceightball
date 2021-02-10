@@ -22,9 +22,9 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12 text-center">        
-                            <form action='#' method='get'>
+                            <form method='get' action="form_submit.php">
                                 <input name='Question' placeholder="Ask a question..." />
-                                <input class='btn btn-success' type='submit' value='Ask' />
+                                <input class='btn btn-success' type='submit' value='Ask' name="question" />
                             </form>
                         </div>
                     </div>
