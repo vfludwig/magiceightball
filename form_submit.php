@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$db_name = "dev_to";
+$db_name = "Magic_Eightball";
 $username = "root";
 $password = "password";
 $connection = null;
@@ -13,7 +13,7 @@ echo "Connection error: " . $exception->getMessage();
 
 function saveData($question, $answer, $timedaterecorded){
 global $connection;
-$query = "INSERT INTO eightball(question, answer, timedaterecorded) VALUES( :question, :answer, :timedaterecorded)";
+$query = "INSERT INTO info(question, answer, timedaterecorded) VALUES( :question, :answer, :timedaterecorded)";
 
 $callToDb = $connection->prepare( $query );
 $question=htmlspecialchars(strip_tags($question));
@@ -30,12 +30,12 @@ return '<h3 style="text-align:center;">We will get back to you very shortly!</h3
 }
 
 if( isset($_POST['submit'])){
-$name = htmlentities($_POST['name']);
-$email = htmlentities($_POST['email']);
-$message = htmlentities($_POST['message']);
+$question = htmlentities($_POST['question']);
+$answer = htmlentities($_POST['answer']);
+$timedaterecorded = htmlentities($_POST['timedaterecorded']);
 
 //then you can use them in a PHP function. 
-$result = saveData($name, $email, $message);
+$result = saveData($question, $answer, $timedaterecorded);
 echo $result;
 }
 else{
