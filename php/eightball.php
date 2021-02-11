@@ -44,12 +44,24 @@
 
                                         echo '<span class="answer">' . $result . '</span>' . PHP_EOL;
 
+
 echo "A1";
 $host = "34.123.73.233";
 $db_name = "MBall";
 $username = "root";
 $password = "eightball";
 
+mysqli_report(MYSQLI_REPORT_STRICT);
+
+try {
+     $connection = new mysqli($host, $username, $password, $db_name) ;
+} catch (Exception $e ) {
+     echo "Service unavailable";
+     echo "message: " . $e->message;   // not in live code obviously...
+     exit;
+}
+
+/*
 echo "B1";
 $connection = new mysqli_connect($host, $username, $password, $db_name);
 echo "B2";
@@ -60,7 +72,7 @@ if(!$connection){
 }else{
   echo "connected \n";
 }
-
+*/
 echo "C1";
 $question = $_GET["Question"];
 
@@ -73,13 +85,13 @@ $ipaddress = $_SERVER['REMOTE_ADDR'];
 $query = "INSERT INTO info(questions, answers, datetimerecorded, ipaddress) VALUES('$question', '$answer', '$now', '$ipaddress')";
 
 echo "D1";
-if (mysqli_query($connection, $query)) {
+if ($connection->query($query) === TRUE) {
   echo "New record created successfully";
 } else {
-  echo "Error: " . $query . "<br>" . mysqli_error($connection);
+  echo "Error: " . $query . "<br>" . $connection->error;
 }
 
-mysqli_close($connection);
+$connection->close();
 //then you can use them in a PHP function.
 
 
