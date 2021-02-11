@@ -45,14 +45,14 @@
                                         echo '<span class="answer">' . $result . '</span>' . PHP_EOL;
 
 
-echo "A1";
+
 $host = "34.123.73.233";
 $db_name = "MBall";
 $username = "root";
 $password = "eightball";
-echo "A2";
+
 mysqli_report(MYSQLI_REPORT_STRICT);
-echo "a3";
+
 try {
      $connection = new mysqli("34.123.73.233", "root", "eightball", "MBall") ;
 } catch (Exception $e ) {
@@ -61,19 +61,7 @@ try {
      exit;
 }
 
-/*
-echo "B1";
-$connection = new mysqli_connect($host, $username, $password, $db_name);
-echo "B2";
-if(!$connection){
-  echo "Failed connection";
-  die("Connection failed: " . $connection->connect_error);
 
-}else{
-  echo "connected \n";
-}
-*/
-echo "C1";
 $question = $_GET["Question"];
 
 $now = date('Y-m-d H:i:s');
@@ -84,9 +72,9 @@ $ipaddress = $_SERVER['REMOTE_ADDR'];
 
 $query = "INSERT INTO info(questions, answers, datetimerecorded, ipaddress) VALUES('$question', '$answer', '$now', '$ipaddress')";
 
-echo "D1";
+
 if ($connection->query($query) === TRUE) {
-  echo "New record created successfully";
+  //echo "New record created successfully";
 } else {
   echo "Error: " . $query . "<br>" . $connection->error;
 }
