@@ -49,12 +49,11 @@ $host = "34.123.73.233";
 $db_name = "MBall";
 $username = "root";
 $password = "eightball";
-$connection = null;
-try{
-$connection = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);
-$connection->exec("set names utf8");
-}catch(PDOException $exception){
-echo "Connection error: " . $exception->getMessage();
+
+
+$connection = new mysqli($host, $username, $password, $db_name);
+if($connection->connect_error){
+  die("Connection failed: " . $conn->connect_error);
 }
 
 
@@ -66,23 +65,18 @@ $answer = $result;
 
 $ipaddress = $_SERVER['REMOTE_ADDR'];
 
-function saveData($question, $answer, $now, $ipaddress){
-global $connection;
 $query = "INSERT INTO info(questions, answers, datetimerecorded, ipaddress) VALUES('$question', '$answer', '$now', '$ipaddress')";
 
-$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-try{
-$connection->exec($query);
+
+if ($connection->query($query) === TRUE) {
   echo "New record created successfully";
-} catch(PDOException $e) {
-  echo $query . "<br>" . $e->getMessage();
+} else {
+  echo "Error: " . $query . "<br>" . $conn->error;
 }
 
-
-}
+$conn->close();
 //then you can use them in a PHP function.
-$results = saveData($question, $answer, $now,$ipaddress);
-echo $results;
+
 
 
 
