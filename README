@@ -3,4 +3,4 @@ Credits:
 Original PHP, HTML, & CSS Code from https://geekgirljoy.wordpress.com/2017/03/05/php-html-css-magic-8-ball/
 
 form_submit.php from https://dev.to/alwaysup/create-a-web-server-and-save-form-data-into-mysql-database-using-php-beginners-guide-fah
-(form_submit.php is unused here but parts of the code are using in eightball.php)
+(form_submit.php is unused here but parts of the code are used in eightball.php)
