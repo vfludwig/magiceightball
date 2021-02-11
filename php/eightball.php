@@ -51,9 +51,9 @@ $username = "root";
 $password = "eightball";
 
 echo "B1";
-$connection = new mysqli($host, $username, $password, $db_name);
+$connection = new mysqli_connect($host, $username, $password, $db_name);
 echo "B2";
-if($connection->connect_error){
+if(!$connection){
   echo "Failed connection";
   die("Connection failed: " . $connection->connect_error);
 
@@ -73,13 +73,13 @@ $ipaddress = $_SERVER['REMOTE_ADDR'];
 $query = "INSERT INTO info(questions, answers, datetimerecorded, ipaddress) VALUES('$question', '$answer', '$now', '$ipaddress')";
 
 echo "D1";
-if ($connection->query($query) === TRUE) {
+if (mysqli_query($connection, $query)) {
   echo "New record created successfully";
 } else {
-  echo "Error: " . $query . "<br>" . $connection->error;
+  echo "Error: " . $query . "<br>" . mysqli_error($connection);
 }
 
-$connection->close();
+mysqli_close($connection);
 //then you can use them in a PHP function.
 
 
