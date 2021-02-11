@@ -53,8 +53,9 @@ $password = "eightball";
 echo "B1";
 $connection = new mysqli($host, $username, $password, $db_name);
 if($connection->connect_error){
-  die("Connection failed: " . $conn->connect_error);
   echo "Failed connection";
+  die("Connection failed: " . $connection->connect_error);
+
 }else{
   echo "connected \n";
 }
@@ -74,10 +75,10 @@ echo "D1";
 if ($connection->query($query) === TRUE) {
   echo "New record created successfully";
 } else {
-  echo "Error: " . $query . "<br>" . $conn->error;
+  echo "Error: " . $query . "<br>" . $connection->error;
 }
 
-$conn->close();
+$connection->close();
 //then you can use them in a PHP function.
 
 
