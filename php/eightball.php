@@ -52,6 +52,7 @@ $password = "eightball";
 
 echo "B1";
 $connection = new mysqli($host, $username, $password, $db_name);
+echo "B2";
 if($connection->connect_error){
   echo "Failed connection";
   die("Connection failed: " . $connection->connect_error);
