@@ -50,11 +50,11 @@ $host = "34.123.73.233";
 $db_name = "MBall";
 $username = "root";
 $password = "eightball";
-
+echo "A2";
 mysqli_report(MYSQLI_REPORT_STRICT);
-
+echo "a3";
 try {
-     $connection = new mysqli($host, $username, $password, $db_name) ;
+     $connection = new mysqli("34.123.73.233", "root", "eightball", "MBall") ;
 } catch (Exception $e ) {
      echo "Service unavailable";
      echo "message: " . $e->message;   // not in live code obviously...
