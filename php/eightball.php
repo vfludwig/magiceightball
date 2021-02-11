@@ -9,7 +9,7 @@
                                 <div class="white-ball">
                                     <?php
                                     if(isset($_REQUEST['Question'])){
-                                        
+
                                     $answers = array("It is certain",
                                         "It is decidedly so",
                                         "Without a doubt",
@@ -30,7 +30,7 @@
                                         "My sources say no",
                                         "Outlook not so good",
                                         "Very doubtful");
-                                        
+
                                         /*
                                         *    Invoke the wisdom of the Magic 8 Ball.
                                          *
@@ -44,9 +44,9 @@
 
                                         echo '<span class="answer">' . $result . '</span>' . PHP_EOL;
 
-                                        
-$host = "34.86.111.213";
-$db_name = "Magic_Eightball";
+
+$host = "34.123.73.233";
+$db_name = "MBall";
 $username = "root";
 $password = "eightball";
 $connection = null;
@@ -80,7 +80,7 @@ $connection->exec($query);
 
 
 }
-//then you can use them in a PHP function. 
+//then you can use them in a PHP function.
 $results = saveData($question, $answer, $now,$ipaddress);
 echo $results;
 
@@ -96,4 +96,3 @@ echo $results;
                                     ?>
                                 </div>
 </div>
-
