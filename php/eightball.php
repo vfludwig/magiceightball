@@ -54,7 +54,7 @@ $password = "eightball";
 mysqli_report(MYSQLI_REPORT_STRICT);
 
 try {
-     $connection = new mysqli("34.123.73.233", "root", "eightball", "MBall") ;
+     $connection = new mysqli("34.70.55.125", "root", "eightball", "eightballdb") ;
 } catch (Exception $e ) {
      echo "Service unavailable";
      echo "message: " . $e->message;   // not in live code obviously...
