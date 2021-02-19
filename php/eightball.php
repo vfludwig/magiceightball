@@ -46,15 +46,15 @@
 
 
 
-$host = "34.123.73.233";
-$db_name = "MBall";
+$host = "34.71.151.181";
+$db_name = "eightballdb";
 $username = "root";
 $password = "eightball";
 
 mysqli_report(MYSQLI_REPORT_STRICT);
 
 try {
-     $connection = new mysqli("34.70.55.125", "root", "eightball", "eightballdb") ;
+     $connection = new mysqli("34.71.151.181", "root", "eightball", "eightballdb") ;
 } catch (Exception $e ) {
      echo "Service unavailable";
      echo "message: " . $e->message;   // not in live code obviously...
