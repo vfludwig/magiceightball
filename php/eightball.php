@@ -51,15 +51,19 @@ $db_name = "eightballdb";
 $username = "root";
 $password = "eightball";
 
+echo "A";
 mysqli_report(MYSQLI_REPORT_STRICT);
 
 try {
+    echo "B";
      $connection = new mysqli("34.71.151.181", "root", "eightball", "eightballdb") ;
 } catch (Exception $e ) {
+    echo "C";
      echo "Service unavailable";
      echo "message: " . $e->message;   // not in live code obviously...
      exit;
 }
+echo "D";
 
 
 $question = $_GET["Question"];
